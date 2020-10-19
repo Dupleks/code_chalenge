@@ -4,7 +4,7 @@ public class Day5Task1 {
     static Character[] alphabet = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
 
     public static void main(String[] args) {
-        String text = "Hello My Friend";
+        String text = "Hello My FriendzA";
         String encoded = encoder(text);
         System.out.println(encoded);
         System.out.println(decoder(encoded));
@@ -23,9 +23,10 @@ public class Day5Task1 {
                 else if ((ch.equals(originalTextCharacterLowerCase))) {
                     int x = i + 1;
 
-                    if (originalTextCharacterLowerCase.equals('z')) {
+                    if (originalTextCharacterLowerCase.equals(alphabet[alphabet.length-1])) {
                         x = 0;
                     }
+                    
                     if (Character.isLowerCase(originalTextCharacter)) {
                         list.add(l, Character.toUpperCase(alphabet[x]));
                     } else {
@@ -51,8 +52,8 @@ public class Day5Task1 {
                 else if ((ch.equals(originalTextCharacterLowerCase))) {
                     int x = i - 1;
 
-                    if (originalTextCharacterLowerCase.equals('a')) {
-                        x = 26;
+                    if (originalTextCharacterLowerCase.equals(alphabet[0])) {
+                        x = alphabet.length-1;
                     }
                     if (Character.isLowerCase(originalTextCharacter)) {
                         list.add(l, Character.toUpperCase(alphabet[x]));
